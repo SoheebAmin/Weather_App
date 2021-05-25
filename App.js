@@ -19,6 +19,11 @@ export default function App() {
         setErrorMessage('Location Access Required')
         return
       }
+    const location = await location.getCurrentLocation()
+
+    const { latitude, longitude } = location.coords
+    alert('Latitude : ${latitude}, Longitude: ${longitude}')
+
     } catch (error) {} 
   }
 

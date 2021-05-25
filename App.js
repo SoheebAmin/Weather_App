@@ -1,7 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import * as location from 'expo-location';
+import { StatusBar } from 'expo-status-bar'
+import React, { useEffect, useState } from 'react'
+import { StyleSheet, Text, View } from 'react-native'
+import * as location from 'expo-location'
 
 export default function App() {
 
@@ -13,16 +13,13 @@ export default function App() {
 
   async function load() {
     try {
-      let { status } = await location.requestForegroundPermissionsAsync();
+      let { status } = await location.requestForegroundPermissionsAsync()
 
       if(status != 'granted') {
         setErrorMessage('Location Access Required')
         return
       }
-
-    } catch (error) {
-
-    } 
+    } catch (error) {} 
   }
 
   return (
